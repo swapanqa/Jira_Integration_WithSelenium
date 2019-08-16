@@ -25,10 +25,14 @@ public class BaseTest {
 	public Page page;
 
 	@BeforeMethod
+	
 	@Parameters(value = { "browser" })
 	public void setUpTest(String browser) {
 		if (browser.equals("chrome")) {
-			WebDriverManager.chromedriver().setup();
+			
+			 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")
+					 + "/src/main/resources/driver/chromedriver");
+			//WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		} else if (browser.equals("ff")) {
 			WebDriverManager.firefoxdriver().setup();

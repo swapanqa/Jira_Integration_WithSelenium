@@ -16,20 +16,20 @@ import com.util.JiraPolicy;
  */
 public class LoginTest extends BaseTest{
 	
-	@JiraPolicy(logTicketReady=false)
-	@Test(priority=1, enabled=true)
-	public void verifyLoginPageTitleTest(){
-		String title = page.getInstance(LoginPage.class).getLoginPageTitle();
-		System.out.println(title);
-		Assert.assertEquals(title, "HubSpot LoginXX");
-	}
+//	@JiraPolicy(logTicketReady=false)
+//	@Test(priority=1, enabled=true)
+//	public void verifyLoginPageTitleTest(){
+//		String title = page.getInstance(LoginPage.class).getLoginPageTitle();
+//		System.out.println(title);
+//		Assert.assertEquals(title, "HubSpot LoginXX");
+//	}
 	
-//	@JiraPolicy(logTicketReady=true)
-//	@Test(priority=2, enabled=true)
-//	public void verifyLoginPageHeaderTest(){
-//		String header = page.getInstance(LoginPage.class).getLoginPageHeader();
-//		System.out.println(header);
-//		Assert.assertEquals(header, "Don't have an account?XXX");
+	@JiraPolicy(logTicketReady=true)
+	@Test(priority=2, enabled=true)
+	public void verifyLoginPageHeaderTest(){
+		String header = page.getInstance(LoginPage.class).getLoginPageHeader();
+		System.out.println(header);
+	Assert.assertEquals(header, "Don't have an account?XXX");
 //	}
 //	
 //	@JiraPolicy(logTicketReady=true)
@@ -45,4 +45,4 @@ public class LoginTest extends BaseTest{
 	
 	
 
-}
+}}
